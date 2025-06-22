@@ -8,12 +8,16 @@ Cette application est basée sur le tutoriel de Mohamed Youssfi et a été adapt
 ## Captures d'écran
 
 ### Liste des produits
-![Liste des produits](screenshot1.jpg)
+![Liste des produits](![image](https://github.com/user-attachments/assets/44719c15-192d-4819-bee2-b8cb0e8f7952)
+)
 *La page principale affiche tous les produits avec leurs informations et options d'actions.*
 
 ### Formulaire d'ajout/modification
-![Formulaire de produit](screenshot2.jpg)
+![Formulaire de produit](![image](https://github.com/user-attachments/assets/7c04529f-47b4-44ae-a14f-5d95e4e70346)
+)
 *Interface pour ajouter ou modifier un produit.*
+![image](https://github.com/user-attachments/assets/10a323da-59ec-4f42-9ef6-bfac858119f9)
+
 
 ## Fonctionnalités
 
