@@ -1,59 +1,108 @@
-# AngularProducts
+# Gestion de Produits - Application Angular avec Backend Spring Boot
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.0.2.
+## Description
+Cette application est une interface complète de gestion de produits développée avec Angular 20 (composants standalone) et qui s'intègre parfaitement avec un backend Spring Boot. Elle permet de réaliser toutes les opérations CRUD (Création, Lecture, Mise à jour, Suppression) sur des produits, avec une interface utilisateur entièrement en français.
 
-## Development server
+Cette application est basée sur le tutoriel de Mohamed Youssfi et a été adaptée pour utiliser les fonctionnalités les plus récentes d'Angular.
 
-To start a local development server, run:
+## Captures d'écran
 
-```bash
-ng serve
-```
+### Liste des produits
+![Liste des produits](screenshot1.jpg)
+*La page principale affiche tous les produits avec leurs informations et options d'actions.*
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+### Formulaire d'ajout/modification
+![Formulaire de produit](screenshot2.jpg)
+*Interface pour ajouter ou modifier un produit.*
 
-## Code scaffolding
+## Fonctionnalités
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+- ✅ Affichage de la liste des produits
+- ✅ Ajout d'un nouveau produit
+- ✅ Modification d'un produit existant
+- ✅ Suppression d'un produit
+- ✅ Système de fallback local en cas d'indisponibilité du backend
+- ✅ Interface utilisateur 100% en français
+- ✅ Design responsive avec Bootstrap
 
-```bash
-ng generate component component-name
-```
+## Architecture
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+### Frontend (Angular 20)
+- Composants standalone
+- Services injectables pour la gestion des données
+- Utilisation des Observables RxJS pour les opérations asynchrones
+- Interface utilisateur avec Bootstrap et Bootstrap Icons
+- Stockage local (localStorage) pour la persistance côté client
 
-```bash
-ng generate --help
-```
+### Backend (Spring Boot)
+- API REST pour les opérations CRUD
+- Persistence avec JPA/Hibernate
+- Cross-Origin Resource Sharing (CORS) activé
 
-## Building
+## Installation et démarrage
 
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
+### Backend (Spring Boot)
 
 ```bash
-ng e2e
+# Se positionner dans le répertoire du backend
+cd reference-backend
+
+# Compiler et lancer le serveur
+./mvnw spring-boot:run
+```
+Le backend sera accessible sur http://localhost:8083
+
+### Frontend (Angular)
+
+```bash
+# Dans le répertoire principal du projet
+npm install
+ng serve --open
+```
+L'application Angular sera accessible sur http://localhost:4200
+
+## Structure du projet
+
+```
+├── src/
+│   ├── app/
+│   │   ├── product/         # Composant de liste des produits
+│   │   ├── product-form/    # Formulaire d'ajout/modification
+│   │   └── services/        # Services pour la communication avec le backend
+│   └── assets/              # Ressources statiques
+├── reference-backend/       # Backend Spring Boot
+└── README.md               # Ce fichier
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+## Modèle de données
 
-## Additional Resources
+Chaque produit possède les propriétés suivantes :
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+- `id`: Identifiant unique (généré automatiquement)
+- `name`: Nom du produit
+- `price`: Prix du produit
+- `quantity`: Quantité en stock
+- `selected`: État de sélection du produit
+
+## API Endpoints
+
+| Méthode | URL                       | Description                   |
+|---------|---------------------------|-------------------------------|
+| GET     | /products                 | Récupérer tous les produits   |
+| GET     | /products/{id}            | Récupérer un produit par ID   |
+| POST    | /products                 | Créer un nouveau produit      |
+| PUT     | /products/{id}            | Mettre à jour un produit      |
+| DELETE  | /products/{id}            | Supprimer un produit          |
+
+## Développement
+
+### Prérequis
+
+- Node.js (version 16+)
+- Angular CLI (version 17+)
+- JDK 17+
+- Maven 3.8+
+
+## Auteur
+
+Basé sur le tutoriel de Mohamed Youssfi, adapté et amélioré.
